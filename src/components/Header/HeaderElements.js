@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {Link as LinkS} from 'react-scroll'
 
 export const HeaderContainer = styled.div`
     height: 10vh;
@@ -10,6 +11,7 @@ export const HeaderContainer = styled.div`
     position: sticky;
     top: 0;
     z-index: 10;
+    background-color: #121113;
 `
 export const HeaderData = styled.div`
     max-width: 1200px;
@@ -32,6 +34,17 @@ export const HeaderItem =  styled.h2`
         cursor: pointer;
     }
 `
+export const HeaderFlag =  styled.div`
+    padding:0;
+    margin: 0;
+    width: 40px;
+    filter: grayscale(${({english})=>(english? '50': '0')});
+    transition: all 0.5s ease-in-out;
+    :hover{
+        cursor: pointer;
+    }
+`
+
 export const HeaderSmall = styled.div`
     display: none;
     height: 100px;
@@ -62,4 +75,15 @@ export const HeaderMenu = styled.div`
     @media screen and (max-width: 768px){
         display: block;
     }
+`
+
+export const NavLinks = styled(LinkS)`
+    color: white;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+    cursor: pointer;
+    
 `

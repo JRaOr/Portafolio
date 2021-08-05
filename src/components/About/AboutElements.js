@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import {Link as LinkS} from 'react-scroll'
 
 export const AboutContainer = styled.div`
-    height: 100vh;
+    height: 90vh;
     overflow: hidden;
     display: flex;
     justify-content:center;
@@ -44,6 +45,8 @@ export const AboutH1 = styled.h1`
     padding-left: 20px;
 `
 export const AboutP = styled.p`
+    font-size: 20px;
+    text-align: justify;
     padding: 20px;
 `
 export const AboutButton = styled.button`
@@ -56,5 +59,18 @@ export const AboutButton = styled.button`
     font-size: 20px;
     :hover{
         cursor: pointer;
+    }
+`
+export const NavLinks = styled(LinkS)`
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    cursor: pointer;
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 5px;
+    :hover{
+        color: whitesmoke;
     }
 `

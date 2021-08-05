@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {Link as LinkS} from 'react-scroll'
 
 export const LandingContainer = styled.div`
     height: 100vh;
@@ -59,5 +60,15 @@ export const QuoteButton = styled.button`
     color: white;
     :hover{
         cursor: pointer;
+    }
+`
+export const NavLinks = styled(LinkS)`
+    color: black;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    cursor: pointer;
+    :hover{
+        color: whitesmoke;
     }
 `

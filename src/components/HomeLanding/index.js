@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import TypeWriter from "react-typewriter";
-import { LandingContainer, LandingH1, LandingButton, LandingIcon, LandingSocial, LandingP, LandingQuote, QuoteButton} from './LandingElements';
+import { LandingContainer, LandingH1, LandingButton, LandingIcon, LandingSocial, LandingP, LandingQuote, QuoteButton, NavLinks} from './LandingElements';
 import {AiOutlineFacebook, AiFillGithub, AiOutlineInstagram, AiFillLinkedin, AiFillFacebook} from 'react-icons/ai'
 import {BsArrowDownShort} from 'react-icons/bs'
 import axios from 'axios'
-const Landing = () => {
+const Landing = ({english}) => {
+    console.log('Landing page language: ', english)
     const [name, setname] = useState('Gerardo Ramirez')
     const [quote, setQuote] = useState(null)
     const [author, setauthor] = useState(null)
@@ -25,8 +26,8 @@ const Landing = () => {
         })
     }
     return (
-        <LandingContainer>
-            <LandingH1><TypeWriter typing={0.5}>{name ? `I'm ${name}.` : null}</TypeWriter></LandingH1>
+        <LandingContainer id='home'>
+            <LandingH1><TypeWriter typing={0.5}>{english ? `I'm ${name}.` : `Hola, soy ${name}`}</TypeWriter></LandingH1>
             <LandingQuote>
                 <LandingP>{quote}</LandingP>
                 <h3>{author}</h3>
@@ -47,7 +48,7 @@ const Landing = () => {
                 </LandingIcon>
             </LandingSocial>
             <LandingButton>
-                <BsArrowDownShort/>
+                <NavLinks to='about'smooth={true} duration={500} spy={true} exact='true' offset={-80}> <BsArrowDownShort /></NavLinks>
             </LandingButton>
         </LandingContainer>
     )

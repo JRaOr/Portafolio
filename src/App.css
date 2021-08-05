@@ -1,10 +1,13 @@
 html{
   background: radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%);
-  overflow: hidden;
   padding: 0;
   margin: 0;
   color: white;
   font-family: 'Courier New', Courier, monospace;
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar{
+  display: none;
 }
 body{
   padding: 0;
@@ -13,7 +16,7 @@ body{
 .page-container{
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
+  overflow: scroll;
   padding: 0;
   margin: 0;
 }
@@ -36,4 +39,88 @@ body{
 .bar-skill{
   height: 100%;
   background-color: hsl(0, 100%, 60%);
+}
+.electronic-icon{
+  border-radius: 10px;
+  animation: smallItem 0.3s linear forwards;
+}
+.electronic-icon:hover{
+  cursor: pointer;
+}
+.icon-selected{
+  border-radius: 10px;
+  animation: growItem 0.3s linear forwards;
+}
+
+@keyframes smallItem {
+  0%{
+    width: 80%;
+    filter: grayscale(0);
+  }
+  100%{
+    width: 60%;
+    filter: grayscale(90);
+  }
+}
+@keyframes growItem {
+  0%{
+    width: 60%;
+    filter: grayscale(90);
+  }
+  100%{
+    width: 80%;
+    filter: grayscale(0);
+  }
+}
+.more-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 20px;
+}
+.more-electronic-tools{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  right: 0;
+  font-size: 25px;
+  animation: rotateNormal 0.3s linear forwards;
+}
+.more-electronic-tools:hover{
+  cursor: pointer;
+}
+@keyframes rotateNormal {
+  0%{
+    transform: rotateZ(-90deg);
+  }
+  100%{
+    transform: rotateZ(90deg);
+  }
+}
+.more-electronic-tools-rotate{
+  animation: rotateTools 0.3s linear forwards;
+}
+@keyframes rotateTools {
+  0%{
+    transform: rotateZ(90deg);
+  }
+  100%{
+    transform: rotateZ(-90deg);
+  }
+}
+.image-gallery{
+  width: 95%;
+}
+.selected-list{
+  margin-left: 100px;
+  color: purple;
+}
+
+.hide-scroll{
+  scrollbar-width: none;
+}
+.hide-scroll::-webkit-scrollbar{
+  display: none;
 }
