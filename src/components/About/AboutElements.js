@@ -74,3 +74,23 @@ export const NavLinks = styled(LinkS)`
         color: whitesmoke;
     }
 `
+
+export const DownButtons = styled.div`
+    display: flex;
+    gap: 20px;
+`
+export const SpanishButton = styled.button`
+    height: 3vh;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 2vh;
+    background-color: transparent;
+    color: white;
+
+    :hover{
+        cursor: pointer;
+        box-shadow: rgba(40, 82, 67, 0.5) 0px 10px 20px, rgba(40, 82, 67, 0.5) 0px 6px 6px;
+    }
+`

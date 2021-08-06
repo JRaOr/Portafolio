@@ -1,3 +1,7 @@
+.star{
+    position: absolute;
+    left: 10vw;
+}
 #stars {
     width: 1px;
     height: 1px;

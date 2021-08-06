@@ -5,6 +5,7 @@ import HomeLanding from '../components/HomeLanding'
 import About from '../components/About'
 import Resume from '../components/Resume'
 import Gallery from '../components/Gallery'
+import Contact from '../components/Contact'
 const Home = () => {
     const [english, setEnglish] = useState(true)
     const changelanguage = (idioma)=>{
@@ -29,6 +30,7 @@ const Home = () => {
         <HomeLanding english={english}/>
         <About english={english}/>
         <Resume english={english}/>
+        {/* <Contact english={english}/> */}
         <Gallery english={english}/>
         </>
     )

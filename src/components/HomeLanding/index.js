@@ -3,6 +3,7 @@ import TypeWriter from "react-typewriter";
 import { LandingContainer, LandingH1, LandingButton, LandingIcon, LandingSocial, LandingP, LandingQuote, QuoteButton, NavLinks} from './LandingElements';
 import {AiOutlineFacebook, AiFillGithub, AiOutlineInstagram, AiFillLinkedin, AiFillFacebook} from 'react-icons/ai'
 import {BsArrowDownShort} from 'react-icons/bs'
+import Star from '../star'
 import axios from 'axios'
 const Landing = ({english}) => {
     console.log('Landing page language: ', english)
@@ -50,6 +51,7 @@ const Landing = ({english}) => {
             <LandingButton>
                 <NavLinks to='about'smooth={true} duration={500} spy={true} exact='true' offset={-80}> <BsArrowDownShort /></NavLinks>
             </LandingButton>
+            <Star/>
         </LandingContainer>
     )
 }

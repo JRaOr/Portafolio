@@ -3,11 +3,15 @@ import {Link as LinkS} from 'react-scroll'
 
 export const LandingContainer = styled.div`
     height: 100vh;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     transition: all 0.5s ease-in-out;
+    overflow: hidden;
+    width: 100vw;
+    top: -10vh;
 `
 export const LandingH1 = styled.div`
     font-size: 70px;

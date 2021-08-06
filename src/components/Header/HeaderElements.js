@@ -11,7 +11,8 @@ export const HeaderContainer = styled.div`
     position: sticky;
     top: 0;
     z-index: 10;
-    background-color: #121113;
+    gap: 50px;
+    background-color: ${({origin})=>(origin? 'transparent': '#121113')};
 `
 export const HeaderData = styled.div`
     max-width: 1200px;
@@ -26,6 +27,7 @@ export const HeaderData = styled.div`
     }
 `
 export const HeaderItem =  styled.h2`
+    text-transform: uppercase;
     padding:0;
     margin: 0;
     width: 150px;

@@ -1,12 +1,28 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { HeaderContainer, HeaderData, HeaderItem, HeaderMenu, HeaderSmall, HeaderH2, HeaderFlag, NavLinks} from './HeaderElements'
 import {FiMenu} from 'react-icons/fi'
 import mexico from '../../Image/mexico.svg'
 import usa from '../../Image/usa.svg'
 const Header = ({english, changelanguage}) => {
-    console.log(english)
+    const [scrollY, setScrollY] = useState(true);
+
+    function logit() {
+        if(parseInt(window.pageYOffset) < 80)
+            setScrollY(true)
+        else
+            setScrollY(false)
+    }
+    useEffect(() => {
+        function watchScroll() {
+            window.addEventListener("scroll", logit);
+        }
+        watchScroll();
+        return () => {
+            window.removeEventListener("scroll", logit);
+        };
+    });
     return (
-        <HeaderContainer>
+        <HeaderContainer origin={scrollY}>
             <HeaderData>
                 <HeaderItem>
                     <NavLinks to='home'smooth={true} duration={500} spy={true} exact='true' offset={-80}>{english?'Home':'Inicio'}</NavLinks>
@@ -15,16 +31,16 @@ const Header = ({english, changelanguage}) => {
                     <NavLinks to='about'smooth={true} duration={500} spy={true} exact='true' offset={-80}>{english?'About':'Sobre mi'}</NavLinks>
                 </HeaderItem>
                 <HeaderItem>
-                    <NavLinks to='resume'smooth={true} duration={500} spy={true} exact='true' offset={-80}>{english?'Resume':'Carrera'}</NavLinks>
+                    <NavLinks to='resume'smooth={true} duration={500} spy={true} exact='true' offset={-80}>{english?'Career':'Carrera'}</NavLinks>
                 </HeaderItem>
-                <HeaderItem>
+                {/* <HeaderItem>
                     <NavLinks to='works'smooth={true} duration={500} spy={true} exact='true' offset={-80}>{english?'Works':'Proyectos'}</NavLinks>
-                </HeaderItem>
-                <HeaderItem>
-                    <NavLinks to='gallery'smooth={true} duration={500} spy={true} exact='true' offset={-80}>{english?'Gallery':'Galería'}</NavLinks>
-                </HeaderItem>
-                <HeaderItem>
+                </HeaderItem> */}
+                {/* <HeaderItem>
                     <NavLinks to='contact'smooth={true} duration={500} spy={true} exact='true' offset={-80}>{english?'Contact':'Contacto'}</NavLinks>
+                </HeaderItem> */}
+                <HeaderItem>
+                    <NavLinks to='gallery'smooth={true} duration={500} spy={true} exact='true' offset={-110}>{english?'Gallery':'Galería'}</NavLinks>
                 </HeaderItem>
                 <HeaderFlag english={english}>
                     <img onClick={()=>changelanguage('spanish')} src={mexico} className='flag-image'/>
@@ -34,9 +50,9 @@ const Header = ({english, changelanguage}) => {
                 </HeaderFlag>
             </HeaderData>
             <HeaderSmall>
-                <HeaderH2>
+                {/* <HeaderH2>
                     Gerardo Ramirez
-                </HeaderH2>
+                </HeaderH2> */}
                 <HeaderMenu>
                     <FiMenu/>
                 </HeaderMenu>
