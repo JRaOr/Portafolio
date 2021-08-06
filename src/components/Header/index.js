@@ -1,6 +1,10 @@
 import React, {useState, useEffect} from 'react'
-import { HeaderContainer, HeaderData, HeaderItem, HeaderMenu, HeaderSmall, HeaderH2, HeaderFlag, NavLinks} from './HeaderElements'
-import {FiMenu} from 'react-icons/fi'
+import { HeaderContainer, HeaderData, HeaderItem, HeaderMenu, HeaderSmall, HeaderH2, HeaderFlag, NavLinks, LittleText} from './HeaderElements'
+import {FaLanguage} from 'react-icons/fa'
+import {AiOutlineHome} from 'react-icons/ai'
+import {BsFillPersonLinesFill} from 'react-icons/bs'
+import {MdWork} from 'react-icons/md'
+import {RiGalleryFill} from 'react-icons/ri'
 import mexico from '../../Image/mexico.svg'
 import usa from '../../Image/usa.svg'
 const Header = ({english, changelanguage}) => {
@@ -21,6 +25,12 @@ const Header = ({english, changelanguage}) => {
             window.removeEventListener("scroll", logit);
         };
     });
+    const toggleLanguage = ()=>{
+        if(english)
+            changelanguage('spanish')
+        else
+            changelanguage('english')
+    }
     return (
         <HeaderContainer origin={scrollY}>
             <HeaderData>
@@ -50,11 +60,20 @@ const Header = ({english, changelanguage}) => {
                 </HeaderFlag>
             </HeaderData>
             <HeaderSmall>
-                {/* <HeaderH2>
-                    Gerardo Ramirez
-                </HeaderH2> */}
                 <HeaderMenu>
-                    <FiMenu/>
+                    <NavLinks to='home'smooth={true} duration={500} spy={true} exact='true' offset={-80}><AiOutlineHome/></NavLinks>
+                </HeaderMenu>
+                <HeaderMenu>
+                    <NavLinks to='about'smooth={true} duration={500} spy={true} exact='true' offset={-80}><BsFillPersonLinesFill/></NavLinks>
+                </HeaderMenu>
+                <HeaderMenu>
+                    <NavLinks to='resume'smooth={true} duration={500} spy={true} exact='true' offset={-80}><MdWork/></NavLinks>
+                </HeaderMenu>
+                <HeaderMenu>
+                    <NavLinks to='gallery'smooth={true} duration={500} spy={true} exact='true' offset={-110}><RiGalleryFill/></NavLinks>
+                </HeaderMenu>
+                <HeaderMenu onClick={()=>toggleLanguage()}>
+                    <FaLanguage/>
                 </HeaderMenu>
             </HeaderSmall>
             

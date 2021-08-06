@@ -4,6 +4,13 @@ export const GalleryContainer = styled.div`
     height: 90vh;
     padding: 0;
     position: relative;
+    @media screen and (max-width: 768px){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5vh;
+    }
 `
 
 export const GalleryList = styled.div`
@@ -12,6 +19,12 @@ export const GalleryList = styled.div`
     overflow: scroll;
     scrollbar-width: none;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    @media screen and (max-width: 768px){
+        height: 50vh;
+        width: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 40vw);
+    }
 `
 
 export const GalleryListItem = styled.div`
@@ -25,6 +38,11 @@ export const GalleryListItem = styled.div`
         color: rgb(136, 69, 136);
         margin-left: 50px;
     }
+    @media screen and (max-width: 768px){
+        padding-left: 10px;
+        height: 30px;
+        font-size: 30px;
+    }
 `
 export const ImageContainer = styled.div`
     position: absolute;
@@ -37,5 +55,14 @@ export const ImageContainer = styled.div`
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    transform: rotateZ(10deg)
+    transform: rotateZ(10deg);
+    @media screen and (max-width: 768px){
+        position: relative;
+        height: auto;
+        width: 80vw;
+        right: 0vh;
+        top: 0vh;
+        transform: rotateZ(0deg);
+
+    }
 `

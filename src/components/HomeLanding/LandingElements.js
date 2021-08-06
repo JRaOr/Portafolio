@@ -15,6 +15,9 @@ export const LandingContainer = styled.div`
 `
 export const LandingH1 = styled.div`
     font-size: 70px;
+    @media screen and (max-width: 768px){
+    font-size: 40px;
+    }
 `
 export const LandingSocial = styled.div`
     margin-top: 20vh;

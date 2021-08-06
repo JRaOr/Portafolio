@@ -49,14 +49,13 @@ export const HeaderFlag =  styled.div`
 
 export const HeaderSmall = styled.div`
     display: none;
-    height: 100px;
+    height: 10vh;
     width: 100%;
     @media screen and (max-width: 768px){     
         display: flex;
         flex-direction:row;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
-        border-bottom: 1px solid white;
     }
 `
 export const HeaderH2 = styled.h2`
@@ -66,8 +65,7 @@ export const HeaderH2 = styled.h2`
     margin-left: 20px;
 `
 export const HeaderMenu = styled.div`
-    height: 50px;
-    width: 50px;
+    height: 80%;
     font-size: 50px;
     display: none;
     margin-right: 20px;
@@ -75,7 +73,10 @@ export const HeaderMenu = styled.div`
         cursor: pointer;
     }
     @media screen and (max-width: 768px){
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 `
 
@@ -88,4 +89,8 @@ export const NavLinks = styled(LinkS)`
     height: 100%;
     cursor: pointer;
     
+`
+
+export const LittleText = styled.div`
+    font-size: 2vh;
 `

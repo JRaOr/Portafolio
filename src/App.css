@@ -127,3 +127,10 @@ body{
 .link-a{
   color: white;
 }
+
+@media screen and (max-width: 768px) {
+  .selected-list{
+    margin-left: 5px;
+    color: purple;
+  }
+}

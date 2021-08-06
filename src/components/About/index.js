@@ -10,9 +10,7 @@ const About = ({english}) => {
         <AboutContainer id='about'>
             <AboutBg src={ice}/>
             <AboutPhoto src={profile}></AboutPhoto>
-
             <AboutContent>
-
                 <AboutH1>
                     {english ? 'About Me': 'Sobre mi'}
                 </AboutH1>
@@ -27,7 +25,7 @@ const About = ({english}) => {
                     Gerardo Ramirez Ortega<br/>{english?'Country: Mexico': 'País: México'}<br/>{english?'Phone: ': 'Teléfono: '}+52 722 914 2918<br/>{english?'Work Email: ': 'Correo del trabajo: '}gerardo.ramirez04@grupobimbo.com<br/>{english?'Personal Email: ': 'Correo personal: '}gerardo.ra.ort@gmail.com
                 </AboutP>
                 <DownButtons>
-                    <SpanishButton><a className='link-a' href={spanishCV} download="GerardoCV-Spanish.pdf">{english ? 'Download Spanish CV': 'Descargar CV Español'}</a></SpanishButton>
+                    {/* <SpanishButton><a className='link-a' href={spanishCV} download="GerardoCV-Spanish.pdf">{english ? 'Download Spanish CV': 'Descargar CV Español'}</a></SpanishButton> */}
                     <SpanishButton><a className='link-a' href={englishCV} download="GerardoCV-English.pdf">{english ? 'Download English CV': 'Descargar CV Inglés'}</a></SpanishButton>
                 </DownButtons>
                 {/* <NavLinks to='resume'smooth={true} duration={500} spy={true} exact='true' offset={-80}>{english?'Resume': 'Carrera'}</NavLinks> */}

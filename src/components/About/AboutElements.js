@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {Link as LinkS} from 'react-scroll'
 
 export const AboutContainer = styled.div`
-    height: 90vh;
+    height: 100vh;
     overflow: hidden;
     display: flex;
     justify-content:center;
@@ -10,6 +10,9 @@ export const AboutContainer = styled.div`
     position: relative;
     gap: 20px;
     z-index: 1;
+    @media screen and (max-width: 768px){
+        flex-direction: column;
+    }
 `
 
 export const AboutBg = styled.img`
@@ -18,18 +21,19 @@ export const AboutBg = styled.img`
     right:0;
     bottom:0;
     left: 0;
-    height: 100%;
     width:100%;
     filter: blur(5px);
+    @media screen and (max-width: 768px){
+        height: 100vh;
+    }
 `
 
 export const AboutPhoto = styled.img`
     height: 400px;
-    width: 300px;
     border: 2px solid blanchedalmond;
     z-index:2;
     @media screen and (max-width: 768px){
-        display: none;
+        height: 300px;
     }
 `
 export const AboutContent = styled.div`

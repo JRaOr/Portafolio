@@ -46,18 +46,19 @@ const Gallery = ({english}) => {
     const [classSelected, setClass] = useState(0) 
     return (
         <GalleryContainer id='gallery'>
+            <ImageContainer>
+                <img src={imageSelected} className='image-gallery'/>
+            </ImageContainer>
             <GalleryList className='hide-scroll'>
                 {
                     data.map((item, index)=>(
                         <GalleryListItem className={(classSelected === index ? 'selected-list':'')} onClick={()=>{setimageSelected(item.image); setClass(index)}}>
-                            {(english? item.ingles: item.spanish)}
+                            {(english? item.ingles: item.ingles)}
                         </GalleryListItem>  
                     ))
                 }
             </GalleryList>
-            <ImageContainer>
-                <img src={imageSelected} className='image-gallery'/>
-            </ImageContainer>
+            
         </GalleryContainer>
     )
 }
